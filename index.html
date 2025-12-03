@@ -1,45 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Matteo (N3blina)</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 
 <body>
 
-    <li><a href="index.html">Home</a> </li> 
-    <li><a href="about.html">Artist Statement</a> </li> 
-  <div class="media-grid"> 
-    <h1>TITLE</h1> 
-  <div class="media-grid"> 
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Artist Statement</a></li>
+    </ul>
+  </nav>
 
-    <!-- Top-left: video -->
-    <div class="grid-item">
-      <video src="assets/CDJ video.mp4" autoplay muted playsinline loop preload="auto"
-        class="media-item video-small"></video>
+  <main>
+    <h1>TITLE</h1>
+
+    <div class="media-grid">
+
+      <!-- Top-left: video -->
+      <div class="grid-item">
+        <video src="assets/CDJ video.mp4" 
+               autoplay muted playsinline loop preload="auto" 
+               class="media-item video-small">
+        </video>
+      </div>
+
+      <!-- Top-right: Small video -->
+      <div class="grid-item">
+        <video src="assets/Asset 1.mp4" 
+               autoplay muted playsinline loop preload="auto" 
+               class="media-item video-small">
+        </video>
+      </div>
+
+      <!-- Bottom-left: Main video -->
+      <div class="grid-item">
+        <video src="assets/example.mp4" 
+               autoplay muted playsinline loop preload="auto" 
+               class="media-item video-regular">
+        </video>
+      </div>
+
+      <!-- Bottom-right: Second video -->
+      <div class="grid-item">
+        <video src="assets/example2.mp4" 
+               autoplay muted playsinline loop preload="auto" 
+               class="media-item video-regular">
+        </video>
+      </div>
+
     </div>
+  </main>
 
-    <!-- Top-right: Small video -->
-    <div class="grid-item">
-      <video src="assets/Asset 1.mp4" autoplay muted playsinline loop preload="auto"
-        class="media-item video-small"></video>
-    </div>
-
-    <!-- Bottom-left: Main video -->
-    <div class="grid-item">
-      <video src="assets/example.mp4" autoplay muted playsinline loop preload="auto"
-        class="media-item video-regular"></video>
-    </div>
-
-    <!-- Bottom-right: Second video -->
-    <div class="grid-item">
-      <video src="assets/example2.mp4" autoplay muted playsinline loop preload="auto"
-        class="media-item video-regular"></video>
-    </div>
-
-  </div>
 </body>
 </html>
