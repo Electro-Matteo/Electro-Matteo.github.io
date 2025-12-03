@@ -1,0 +1,63 @@
+/* --- Global reset so everything behaves predictably --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Body styling --- */
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* --- Grid container --- */
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* 2 columns */
+  grid-template-rows: auto auto;    /* 2 rows */
+  gap: 20px;                        /* space between items */
+  width: 90vw;
+  max-width: 1200px;
+}
+
+/* --- Items inside the grid --- */
+.grid-item {
+  width: 100%;
+  height: 100%;
+}
+
+/* --- General styling for both images and videos --- */
+.media-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crop to fill the square/rect nicely */
+  display: block;
+  border-radius: 4px;
+}
+
+/* --- Size variations (optional) --- */
+.image-medium {
+  object-fit: cover;
+}
+
+.video-small {
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-regular {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Mobile-friendly responsiveness --- */
+@media (max-width: 700px) {
+  .media-grid {
+    grid-template-columns: 1fr; /* collapse to 1 column on small screens */
+  }
+}
