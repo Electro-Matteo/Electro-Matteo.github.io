@@ -61,3 +61,99 @@ body {
     grid-template-columns: 1fr; /* collapse to 1 column on small screens */
   }
 }
+
+/* --- ADDED NAV + PAGE-SPECIFIC STYLES --- */
+
+.top-right-nav {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.top-right-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.top-right-nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.black-bg .top-right-nav a {
+  color: white;
+}
+
+/* HOME TITLE */
+.home-title {
+  font-size: 3rem;
+  margin-bottom: 5px;
+}
+
+.home-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+/* FOOTER */
+.footer-info {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+/* DARK PAGE STYLES */
+.black-bg {
+  background-color: black;
+}
+
+.white-text {
+  color: white;
+}
+
+.impact-font {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* BIO PAGE */
+.bio-container {
+  padding: 40px;
+}
+
+.bio-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.bio-text {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.bio-video video {
+  width: 250px;
+  border-radius: 8px;
+}
+
+/* ARCHIVE GRID */
+.archive-container {
+  padding: 40px;
+  text-align: center;
+}
+
+.archive-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.archive-item iframe {
+  width: 100%;
+  height: 250px;
+}
+
