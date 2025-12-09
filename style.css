@@ -171,6 +171,6 @@ body {
 
 .archive-item iframe {
   width: 100%;
-  height: 350px; /* bigger videos */
+  height: calc(100% * 9 / 16); /* 16:9 ratio */
 }
 
