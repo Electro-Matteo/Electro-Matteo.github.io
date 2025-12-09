@@ -1,69 +1,27 @@
-/* --- Global reset so everything behaves predictably --- */
+/* -------------------------------------------------
+   GLOBAL RESET
+------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* --- Body styling --- */
+/* -------------------------------------------------
+   BODY DEFAULT (HOME PAGE)
+------------------------------------------------- */
 body {
   background-color: white;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
 }
 
-/* --- Grid container --- */
-.media-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;   /* 2 columns */
-  grid-template-rows: auto auto;    /* 2 rows */
-  gap: 20px;                        /* space between items */
-  width: 90vw;
-  max-width: 1200px;
-}
-
-/* --- Items inside the grid --- */
-.grid-item {
-  width: 100%;
-  height: 100%;
-}
-
-/* --- General styling for both images and videos --- */
-.media-item {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* crop to fill the square/rect nicely */
-  display: block;
-  border-radius: 4px;
-}
-
-/* --- Size variations (optional) --- */
-.image-medium {
-  object-fit: cover;
-}
-
-.video-small {
-  height: 100%;
-  object-fit: cover;
-}
-
-.video-regular {
-  height: 100%;
-  object-fit: cover;
-}
-
-/* --- Mobile-friendly responsiveness --- */
-@media (max-width: 700px) {
-  .media-grid {
-    grid-template-columns: 1fr; /* collapse to 1 column on small screens */
-  }
-}
-
-/* --- ADDED NAV + PAGE-SPECIFIC STYLES --- */
-
+/* -------------------------------------------------
+   NAV (TOP RIGHT)
+------------------------------------------------- */
 .top-right-nav {
   position: fixed;
   top: 20px;
@@ -82,11 +40,14 @@ body {
   font-weight: bold;
 }
 
+/* When page is dark, nav links turn white */
 .black-bg .top-right-nav a {
   color: white;
 }
 
-/* HOME TITLE */
+/* -------------------------------------------------
+   HOME TITLE
+------------------------------------------------- */
 .home-title {
   font-size: 3rem;
   margin-bottom: 5px;
@@ -97,30 +58,50 @@ body {
   margin-bottom: 30px;
 }
 
-/* FOOTER - bottom center */
+/* -------------------------------------------------
+   HOME PAGE GRID
+------------------------------------------------- */
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  width: 90vw;
+  max-width: 1200px;
+}
+
+.grid-item {
+  width: 100%;
+  height: 100%;
+}
+
+.media-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* -------------------------------------------------
+   FOOTER (INSTAGRAM + EMAIL)
+------------------------------------------------- */
 .footer-info {
-  position: fixed;       /* stays at bottom */
-  bottom: 20px;          /* distance from bottom */
-  left: 50%;             /* center horizontally */
-  transform: translateX(-50%);
-  text-align: center;
+  margin-top: 40px;
   font-size: 14px;
-  z-index: 100;          /* make sure it’s above other content */
+  text-align: center;
+  width: 100%;
+  padding-bottom: 20px;
+  color: black; /* default for home */
 }
 
-/* Links in footer */
-.footer-info a {
-  color: black;          /* default for home page */
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* White links for dark pages */
-.black-bg .footer-info a {
+/* Footer white on dark pages */
+.black-bg .footer-info {
   color: white;
 }
 
-/* DARK PAGE STYLES */
+/* -------------------------------------------------
+   DARK PAGE THEMING
+------------------------------------------------- */
 .black-bg {
   background-color: black;
 }
@@ -133,9 +114,12 @@ body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-/* BIO PAGE */
+/* -------------------------------------------------
+   BIO PAGE
+------------------------------------------------- */
 .bio-container {
   padding: 40px;
+  color: white;
 }
 
 .bio-layout {
@@ -151,15 +135,20 @@ body {
 }
 
 .bio-video video {
-  width: 350px;  /* bigger than before */
-  max-width: 100%; /* keeps it from overflowing on small screens */
+  width: 350px;       /* bigger */
+  max-width: 100%;
+  aspect-ratio: 9 / 16; /* keeps vertical shape */
+  height: auto;
+  display: block;
 }
 
-
-/* ARCHIVE GRID */
+/* -------------------------------------------------
+   ARCHIVE PAGE
+------------------------------------------------- */
 .archive-container {
   padding: 40px;
   text-align: center;
+  color: white;
 }
 
 .archive-grid {
@@ -171,6 +160,41 @@ body {
 
 .archive-item iframe {
   width: 100%;
-  height: calc(100% * 9 / 16); /* 16:9 ratio */
+  aspect-ratio: 16 / 9; /* FIX: stay landscape */
+  height: auto;
+  border: none;
+  border-radius: 0; /* no rounded edges */
 }
+
+/* -------------------------------------------------
+   RESPONSIVE (IPHONE / SMALL SCREENS)
+------------------------------------------------- */
+@media (max-width: 700px) {
+
+  /* Home page grid goes 1 column */
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Archive grid goes 1 column */
+  .archive-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* BIO page becomes stacked */
+  .bio-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bio-video video {
+    max-width: 80vw;
+  }
+
+  /* Footer spacing */
+  .footer-info {
+    margin-top: 60px;
+  }
+}
+
 
