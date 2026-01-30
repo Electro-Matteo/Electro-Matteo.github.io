@@ -62,9 +62,10 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 20px;
-  width: 90vw;
+  width: 95vw;          /* ← changed from 90vw */
   max-width: 1200px;
 }
+
 
 .grid-item {
   width: 100%;
